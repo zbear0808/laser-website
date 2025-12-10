@@ -1,0 +1,134 @@
+/* ==================== */
+/* Header Styles        */
+/* ==================== */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px;
+  border-bottom: 1px solid var(--color-border);
+  position: relative;
+  background-color: var(--color-bg-header);
+}
+
+.header-nav {
+  display: flex;
+  gap: 10px;
+}
+
+.header-nav-left,
+.header-nav-right {
+  flex: 1;
+}
+
+.header-nav-left {
+  justify-content: flex-start;
+}
+
+.header-nav-right {
+  justify-content: flex-end;
+}
+
+.header-title {
+  text-align: center;
+  padding: 20px 20px;
+}
+
+.header-title h1 {
+  font-size: 2.5rem;
+  letter-spacing: 2px;
+  font-family: var(--font-ndot);
+}
+
+/* Header Link - extends .btn */
+.header-link {
+  padding: 0px 16px;
+  font-size: 1.5rem;
+  font-weight: 500;
+  position: relative;
+}
+
+.header-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color: var(--color-white);
+  transition: width var(--transition-standard), left var(--transition-standard);
+}
+
+.header-link:hover {
+  transform: translateY(-2px);
+}
+
+.header-link:hover::after {
+  width: 80%;
+  left: 10%;
+}
+
+.header-link:active {
+  transform: translateY(0) scale(0.98);
+}
+
+/* Clickable Name */
+.header-name {
+  cursor: pointer;
+  /* CSS variables for trichromatic effect */
+  --offset-x: 0;
+  --offset-y: 0;
+  --shift-amount: 1px;
+  position: relative;
+  display: inline-block;
+}
+
+.header-name:hover {
+  transform: scale(1.02);
+}
+
+/* RGB Trichromatic Chromatic Aberration Effect */
+.header-name.trichromatic {
+  color: #ff0000;
+  mix-blend-mode: screen;
+  transform: translate(
+    calc(var(--offset-x) * var(--shift-amount)),
+    calc(var(--offset-y) * var(--shift-amount))
+  ) scale(1.02);
+}
+
+.header-name.trichromatic::before,
+.header-name.trichromatic::after {
+  content: 'ZUBAIR AHMED';
+  position: absolute;
+  left: 0;
+  top: 0;
+  mix-blend-mode: screen;
+}
+
+.header-name.trichromatic::before {
+  color: #00ff00;
+  transform: translate(
+    calc(var(--offset-y) * var(--shift-amount)),
+    calc(var(--offset-x) * var(--shift-amount) * -1)
+  );
+}
+
+.header-name.trichromatic::after {
+  color: #0000ff;
+  transform: translate(
+    calc(var(--offset-x) * var(--shift-amount) * -1),
+    calc(var(--offset-y) * var(--shift-amount) * -1)
+  );
+}
+
+/* ==================== */
+/* Mobile/Desktop Visibility */
+/* ==================== */
+.mobile-only {
+  display: none;
+}
+
+.desktop-only {
+  display: flex;
+}

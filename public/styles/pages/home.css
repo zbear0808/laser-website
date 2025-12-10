@@ -1,0 +1,11 @@
+/* ==================== */
+/* Home Page            */
+/* ==================== */
+.home-page {
+  max-width: 1000px;
+}
+
+.home-grid {
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
