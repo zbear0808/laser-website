@@ -1,5 +1,7 @@
 {:deps   {:aliases [:dev]} 
  :builds {:app {:target           :browser
+                :output-dir       "public/js"
+                :asset-path       "/js"
                 :devtools         {:http-port 5000
                                    :http-root "public"
                                    :preloads [dev.refresh]
