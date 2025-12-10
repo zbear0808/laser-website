@@ -1,6 +1,8 @@
 (ns main.pages.pictures
-  (:require [helix.core :refer [defnc $]]
-            [helix.dom :as d]))
+  (:require
+    [helix.core :refer [defnc $]]
+    [helix.dom :as d]))
+
 
 (def image-files
   ["BASS GIRLS teddy.jpg"
@@ -22,16 +24,18 @@
    "REYSUO vert.jpg"
    "yeahdudesame.jpg"])
 
+
 (defnc picture-item [{:keys [filename]}]
   (d/div {:class "card picture-container"}
-    (d/img {:src (str "./images/" filename)
-            :alt filename
-            :class "picture-img"
-            :loading "lazy"})))
+         (d/img {:src (str "./images/" filename)
+                 :alt filename
+                 :class "picture-img"
+                 :loading "lazy"})))
+
 
 (defnc pictures-page []
   (d/div {:class "page pictures-page"}
-    (d/h1 "Pictures")
-    (d/div {:class "grid pictures-grid"}
-      (for [filename image-files]
-        ($ picture-item {:key filename :filename filename})))))
+         (d/h1 "Pictures")
+         (d/div {:class "grid pictures-grid"}
+                (for [filename image-files]
+                  ($ picture-item {:key filename :filename filename})))))

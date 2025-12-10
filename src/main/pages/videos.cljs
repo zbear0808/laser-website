@@ -1,6 +1,8 @@
 (ns main.pages.videos
-  (:require [helix.core :refer [defnc $]]
-            [helix.dom :as d]))
+  (:require
+    [helix.core :refer [defnc $]]
+    [helix.dom :as d]))
+
 
 (def video-ids
   ["JWaN034pKbQ"
@@ -11,18 +13,20 @@
    "5GHO4rhm4Ps"
    "XlnbJfx5i8o"])
 
+
 (defnc video-embed [{:keys [video-id]}]
   (d/div {:class "card video-container"}
-    (d/iframe {:src (str "https://www.youtube.com/embed/" video-id)
-               :title "YouTube video player"
-               :frameBorder "0"
-               :allow "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-               :allowFullScreen true
-               :class "video-iframe"})))
+         (d/iframe {:src (str "https://www.youtube.com/embed/" video-id)
+                    :title "YouTube video player"
+                    :frameBorder "0"
+                    :allow "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    :allowFullScreen true
+                    :class "video-iframe"})))
+
 
 (defnc videos-page []
   (d/div {:class "page"}
-    (d/h1 "Videos")
-    (d/div {:class "grid videos-grid"}
-      (for [video-id video-ids]
-        ($ video-embed {:key video-id :video-id video-id})))))
+         (d/h1 "Videos")
+         (d/div {:class "grid videos-grid"}
+                (for [video-id video-ids]
+                  ($ video-embed {:key video-id :video-id video-id})))))
