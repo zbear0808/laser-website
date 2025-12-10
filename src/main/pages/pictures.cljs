@@ -23,7 +23,7 @@
    "yeahdudesame.jpg"])
 
 (defnc picture-item [{:keys [filename]}]
-  (d/div {:class "picture-container"}
+  (d/div {:class "card picture-container"}
     (d/img {:src (str "./images/" filename)
             :alt filename
             :class "picture-img"
@@ -32,6 +32,6 @@
 (defnc pictures-page []
   (d/div {:class "page pictures-page"}
     (d/h1 "Pictures")
-    (d/div {:class "pictures-grid"}
+    (d/div {:class "grid pictures-grid"}
       (for [filename image-files]
         ($ picture-item {:key filename :filename filename})))))

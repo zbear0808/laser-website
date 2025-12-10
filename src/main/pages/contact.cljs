@@ -95,6 +95,6 @@
               (:message status)))
           
           (d/button {:type "submit"
-                     :class "form-submit-btn"
+                     :class "btn btn-solid form-submit-btn"
                      :disabled submitting?}
             (if submitting? "Sending..." "Send Inquiry")))))))

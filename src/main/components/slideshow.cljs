@@ -7,7 +7,6 @@
                           :or {interval-ms 3000}}]
   (let [[current-index set-current-index!] (hooks/use-state 0)]
     
-    ;; Auto-advance slideshow
     (hooks/use-effect
      [current-index]
      (let [timer (js/setTimeout

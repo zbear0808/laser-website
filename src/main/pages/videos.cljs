@@ -12,7 +12,7 @@
    "XlnbJfx5i8o"])
 
 (defnc video-embed [{:keys [video-id]}]
-  (d/div {:class "video-container"}
+  (d/div {:class "card video-container"}
     (d/iframe {:src (str "https://www.youtube.com/embed/" video-id)
                :title "YouTube video player"
                :frameBorder "0"
@@ -23,6 +23,6 @@
 (defnc videos-page []
   (d/div {:class "page"}
     (d/h1 "Videos")
-    (d/div {:class "videos-grid"}
+    (d/div {:class "grid videos-grid"}
       (for [video-id video-ids]
         ($ video-embed {:key video-id :video-id video-id})))))
