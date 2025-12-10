@@ -170,6 +170,7 @@ body {
 
 .header-title {
   text-align: center;
+  padding: 20px;
 }
 
 .header-title h1 {
@@ -213,12 +214,51 @@ body {
 /* Clickable Name */
 .header-name {
   cursor: pointer;
-  transition: color var(--transition-standard), transform var(--transition-fast);
+  /* CSS variables for trichromatic effect */
+  --offset-x: 0;
+  --offset-y: 0;
+  --shift-amount: 4px;
+  position: relative;
+  display: inline-block;
 }
 
 .header-name:hover {
-  color: var(--color-gray-hover);
   transform: scale(1.02);
+}
+
+/* RGB Trichromatic Chromatic Aberration Effect */
+.header-name.trichromatic {
+  color: #ff0000;
+  mix-blend-mode: screen;
+  transform: translate(
+    calc(var(--offset-x) * var(--shift-amount)),
+    calc(var(--offset-y) * var(--shift-amount))
+  ) scale(1.02);
+}
+
+.header-name.trichromatic::before,
+.header-name.trichromatic::after {
+  content: 'ZUBAIR AHMED';
+  position: absolute;
+  left: 0;
+  top: 0;
+  mix-blend-mode: screen;
+}
+
+.header-name.trichromatic::before {
+  color: #00ff00;
+  transform: translate(
+    calc(var(--offset-y) * var(--shift-amount)),
+    calc(var(--offset-x) * var(--shift-amount) * -1)
+  );
+}
+
+.header-name.trichromatic::after {
+  color: #0000ff;
+  transform: translate(
+    calc(var(--offset-x) * var(--shift-amount) * -1),
+    calc(var(--offset-y) * var(--shift-amount) * -1)
+  );
 }
 
 /* ==================== */
@@ -696,6 +736,23 @@ body {
   .header-title h1 {
     font-size: 1.6rem;
     letter-spacing: 1px;
+  }
+
+  /* Disable trichromatic effect on mobile */
+  .header-name.trichromatic {
+    color: var(--color-white);
+    mix-blend-mode: normal;
+    transform: none;
+  }
+
+  .header-name.trichromatic::before,
+  .header-name.trichromatic::after {
+    display: none;
+  }
+
+  .header-name.trichromatic:hover {
+    color: var(--color-gray-hover);
+    transform: scale(1.02);
   }
 
   /* Page adjustments */
