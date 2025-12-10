@@ -37,11 +37,11 @@
                                         (set-submitting! false)))))]
     
     (d/div {:class "page contact-page"}
-      (d/h1 "Booking / Contact")
+      (d/h1 "Inquiry Form")
       (d/p "Interested in booking or have questions? Fill out the inquiry form below and I'll get back to you!")
       
       (d/div {:class "inquiry-form-container"}
-        (d/h2 {:class "form-title"} "Inquiry Form")
+        #_(d/h2 {:class "form-title"} "Inquiry Form")
         
         (d/form {:class "inquiry-form"
                  :on-submit handle-submit}

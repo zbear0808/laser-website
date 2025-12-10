@@ -4,6 +4,7 @@
             [helix.core :refer [defnc $]]
             [helix.dom :as d]
             [main.components.header :refer [header]]
+            [main.components.footer :refer [footer]]
             [main.components.document-title :refer [document-title]]
             [main.pages.home :refer [home-page]]
             [main.pages.pictures :refer [pictures-page]]
@@ -22,7 +23,8 @@
           ($ Route {:path "/pictures" :element ($ pictures-page)})
           ($ Route {:path "/videos" :element ($ videos-page)})
           ($ Route {:path "/about" :element ($ about-page)})
-          ($ Route {:path "/contact" :element ($ contact-page)}))))))
+          ($ Route {:path "/contact" :element ($ contact-page)})))
+      ($ footer))))
 
 (defonce root
   (rdom/createRoot 

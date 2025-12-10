@@ -12,7 +12,7 @@
     (d/p
       "Been performing since 2023, big fan of all genres of EDM, but especially trap and dnb")
 
-    (d/h2 "What he do❓")
+    (d/h1 "What he do❓")
     (d/p
       "He is primarily a laser operator and uses Beyond. Also experienced with "
       "setting up and operating laser equipment at venues of all sizes. "
@@ -21,7 +21,7 @@
     (d/p
       "Sometimes he also makes Visuals, (looking to learn to be a VJ soon)")
 
-    (d/h2 "What can I pay him to do 🤑")
+    (d/h1 "What can I pay him to do 🤑")
     (d/ul {:class "services-list"}
       (d/li "Rent out and setup laser hardware (Seattle only)")
       (d/li "Operate lasers")

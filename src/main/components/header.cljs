@@ -17,7 +17,7 @@
                              (navigate path)
                              (close-sidebar))
         
-        ;; Handle mouse movement to calculate offset
+        ;; Handle mouse movement to calculate offset relative to title position
         handle-mouse-move (fn [e]
                            (when-let [element @title-ref]
                              (let [rect (.getBoundingClientRect element)
@@ -34,23 +34,26 @@
                                    ;; Normalize to -1 to 1 range
                                    normalized-x (/ offset-from-center-x (/ element-width 2))
                                    normalized-y (/ offset-from-center-y (/ element-height 2))
-                                   ;; Clamp values
-                                   clamped-x (max -1 (min 1 normalized-x))
-                                   clamped-y (max -1 (min 1 normalized-y))]
+                                   ;; Clamp values to reasonable range (allow beyond -1 to 1 for header tracking)
+                                   clamped-x (max -2 (min 2 normalized-x))
+                                   clamped-y (max -2 (min 2 normalized-y))]
                                (set-offset-x! clamped-x)
                                (set-offset-y! clamped-y))))
         
-        ;; Handle mouse enter
-        handle-mouse-enter (fn [e]
-                            (set-hovering! true)
-                            (handle-mouse-move e))
+        ;; Handle mouse enter header
+        handle-header-enter (fn [e]
+                             (set-hovering! true)
+                             (handle-mouse-move e))
         
-        ;; Handle mouse leave
-        handle-mouse-leave (fn []
-                            (set-hovering! false)
-                            (set-offset-x! 0)
-                            (set-offset-y! 0))]
-    (d/header {:class "header"}
+        ;; Handle mouse leave header
+        handle-header-leave (fn []
+                             (set-hovering! false)
+                             (set-offset-x! 0)
+                             (set-offset-y! 0))]
+    (d/header {:class "header"
+               :on-mouse-enter handle-header-enter
+               :on-mouse-move handle-mouse-move
+               :on-mouse-leave handle-header-leave}
       (d/nav {:class "header-nav header-nav-left desktop-only"}
         (d/button {:class "btn header-link"
                    :on-click #(navigate "/pictures")}
@@ -63,19 +66,22 @@
                  :on-click toggle-sidebar
                  :aria-label "Toggle navigation menu"}
         (d/span {:class (str "hamburger-icon " (when sidebar-open? "open"))}
-          (d/span {:class "hamburger-line"})
-          (d/span {:class "hamburger-line"})
-          (d/span {:class "hamburger-line"})))
+          (d/span {:class "hamburger-dot"})
+          (d/span {:class "hamburger-dot"})
+          (d/span {:class "hamburger-dot"})
+          (d/span {:class "hamburger-dot"})
+          (d/span {:class "hamburger-dot"})
+          (d/span {:class "hamburger-dot"})
+          (d/span {:class "hamburger-dot"})
+          (d/span {:class "hamburger-dot"})
+          (d/span {:class "hamburger-dot"})))
       
       (d/div {:class "header-title"}
         (d/h1 {:ref title-ref
                :class (str "header-name" (when is-hovering? " trichromatic"))
                :style {:--offset-x offset-x
                       :--offset-y offset-y}
-               :on-click #(do (navigate "/") (close-sidebar))
-               :on-mouse-enter handle-mouse-enter
-               :on-mouse-move handle-mouse-move
-               :on-mouse-leave handle-mouse-leave}
+               :on-click #(do (navigate "/") (close-sidebar))}
           "ZUBAIR AHMED"))
       
       (d/nav {:class "header-nav header-nav-right desktop-only"}
