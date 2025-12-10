@@ -72,13 +72,28 @@
   transform: translateY(0) scale(0.98);
 }
 
+/* Wiggle Animation Keyframes */
+@keyframes name-wiggle {
+  0%, 9%, 100% {
+    transform: translateX(0);
+  }
+  1% {
+    transform: translateX(-2px);
+  }
+  3% {
+    transform: translateX(2px);
+  }
+  5% {
+    transform: translateX(-2px);
+  }
+  7% {
+    transform: translateX(2px);
+  }
+}
+
 /* Clickable Name */
 .header-name {
   cursor: pointer;
-  /* CSS variables for trichromatic effect */
-  --offset-x: 0;
-  --offset-y: 0;
-  --shift-amount: 1px;
   position: relative;
   display: inline-block;
 }
@@ -87,14 +102,11 @@
   transform: scale(1.02);
 }
 
-/* RGB Trichromatic Chromatic Aberration Effect */
+/* RGB Trichromatic Chromatic Aberration Effect with Animation */
 .header-name.trichromatic {
   color: #ff0000;
   mix-blend-mode: screen;
-  transform: translate(
-    calc(var(--offset-x) * var(--shift-amount)),
-    calc(var(--offset-y) * var(--shift-amount))
-  ) scale(1.02);
+  animation: name-wiggle 5.5s ease-in-out infinite;
 }
 
 .header-name.trichromatic::before,
@@ -108,18 +120,14 @@
 
 .header-name.trichromatic::before {
   color: #00ff00;
-  transform: translate(
-    calc(var(--offset-y) * var(--shift-amount)),
-    calc(var(--offset-x) * var(--shift-amount) * -1)
-  );
+  animation: name-wiggle 5.5s ease-in-out infinite;
+  animation-delay: 0.05s;
 }
 
 .header-name.trichromatic::after {
   color: #0000ff;
-  transform: translate(
-    calc(var(--offset-x) * var(--shift-amount) * -1),
-    calc(var(--offset-y) * var(--shift-amount) * -1)
-  );
+  animation: name-wiggle 5.5s ease-in-out infinite;
+  animation-delay: 0.1s;
 }
 
 /* ==================== */

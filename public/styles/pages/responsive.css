@@ -21,22 +21,6 @@
     letter-spacing: 1px;
   }
 
-  /* Disable trichromatic effect on mobile */
-  .header-name.trichromatic {
-    color: var(--color-white);
-    mix-blend-mode: normal;
-    transform: none;
-  }
-
-  .header-name.trichromatic::before,
-  .header-name.trichromatic::after {
-    display: none;
-  }
-
-  .header-name.trichromatic:hover {
-    color: var(--color-gray-hover);
-    transform: scale(1.02);
-  }
 
   /* Page adjustments */
   .page {
@@ -86,8 +70,8 @@
   }
 
   .home-card-overlay-title {
-    font-size: 15vw;
-    letter-spacing: 1vw;
+    font-size: 8vw;
+    letter-spacing: 0.5vw;
   }
 
   /* Form adjustments for mobile */
@@ -138,7 +122,7 @@
   }
 
   .home-card-overlay-title {
-    font-size: 18vw;
-    letter-spacing: 1.5vw;
+    font-size: 10vw;
+    letter-spacing: 1vw;
   }
 }
