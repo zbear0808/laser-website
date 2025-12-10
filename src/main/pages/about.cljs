@@ -1,5 +1,5 @@
 (ns main.pages.about
-  (:require [helix.core :refer [defnc $]]
+  (:require [helix.core :refer [defnc]]
             [helix.dom :as d]))
 
 (defnc about-page []

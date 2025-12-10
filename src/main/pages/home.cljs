@@ -25,13 +25,13 @@
           (d/div {:class "home-card-image"}
             (d/img {:src "./images/laserVid.gif"
                     :alt "Videos"
-                    :class "home-card-img"}))
-          (d/h2 {:class "home-card-title"} "Videos"))
+                    :class "home-card-img"})
+            (d/div {:class "home-card-overlay-title"} "Videos")))
         
         ;; Pictures Card - with slideshow
         (d/div {:class "home-card"
                 :on-click #(navigate "/pictures")}
           (d/div {:class "home-card-image"}
             ($ image-slideshow {:images slideshow-images
-                                :interval-ms 2500}))
-          (d/h2 {:class "home-card-title"} "Pictures"))))))
+                                :interval-ms 2500})
+            (d/div {:class "home-card-overlay-title"} "Pictures")))))))

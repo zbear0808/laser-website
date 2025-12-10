@@ -69,8 +69,8 @@ body {
   background: transparent;
   color: #ffffff;
   border: none;
-  padding: 10px 16px;
-  font-size: 1.3rem;
+  padding: 0px 16px;
+  font-size: 1.5rem;
   font-weight: 500;
   cursor: pointer;
   font-family: 'Ndot', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -323,6 +323,7 @@ body {
   width: 100%;
   aspect-ratio: 16 / 10;
   overflow: hidden;
+  position: relative;
 }
 
 .home-card-img {
@@ -338,9 +339,43 @@ body {
 
 .home-card-title {
   text-align: center;
-  padding: 20px;
+  padding: 10px;
+  margin: 0;
   font-size: 1.5rem;
-  font-weight: 600;
+  font-weight: 70;
+  font-family: 'Ndot', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Overlay Title for Home Cards */
+.home-card-overlay-title {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  font-size: 5vw;
+  font-weight: 70;
+  font-family: 'Ndot', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 0.5vw;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8), 0 0 40px rgba(0, 0, 0, 0.5);
+  z-index: 10;
+  animation: pulsate 2s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes pulsate {
+  0%, 100% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 1;
+  }
 }
 
 /* Slideshow */
@@ -641,7 +676,12 @@ body {
 
   .home-card-title {
     font-size: 1.3rem;
-    padding: 15px;
+    padding: 8px;
+  }
+
+  .home-card-overlay-title {
+    font-size: 15vw;
+    letter-spacing: 1vw;
   }
 
   /* Form adjustments for mobile */
@@ -689,5 +729,10 @@ body {
 
   .pictures-grid {
     grid-template-columns: 1fr;
+  }
+
+  .home-card-overlay-title {
+    font-size: 18vw;
+    letter-spacing: 1.5vw;
   }
 }

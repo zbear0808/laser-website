@@ -1,5 +1,5 @@
 (ns main.pages.contact
-  (:require [helix.core :refer [defnc $]]
+  (:require [helix.core :refer [defnc]]
             [helix.dom :as d]
             [helix.hooks :as hooks]))
 

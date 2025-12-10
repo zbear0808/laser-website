@@ -1,8 +1,9 @@
 (ns main.app-test
   (:require ["@testing-library/react" :as tlr]
+            ["react-router-dom" :refer [MemoryRouter]]
             [clojure.test :refer [deftest is use-fixtures]]
             [helix.core :refer [$]]
-            [main.component :as c]))
+            [main.components.header :refer [header]]))
 
 (defn setup-root [f]
   (f)
@@ -10,7 +11,10 @@
 
 (use-fixtures :each setup-root)
 
-(deftest a-component-test
-  (let [container (tlr/render ($ c/component-boolean {:value false}))
-        div       (.getByText container "no")]
-      (is (= "no" (.-textContent div)))))
+(deftest header-displays-name
+  (let [container (tlr/render 
+                   ($ MemoryRouter
+                     ($ header)))
+        name-element (.getByText container "ZUBAIR AHMED")]
+    (is (some? name-element))
+    (is (= "ZUBAIR AHMED" (.-textContent name-element)))))
