@@ -55,8 +55,8 @@
   left: 50%;
   width: 0;
   height: 6px;
-  /* Dot pattern using radial gradient */
-  background-image: radial-gradient(circle, var(--color-white) 2px, transparent 2px);
+  /* Dot pattern using inline SVG for vector-crisp rendering */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Ccircle cx='5' cy='3' r='2' fill='white'/%3E%3C/svg%3E");
   background-size: 10px 6px;
   background-repeat: repeat-x;
   background-position: center;
