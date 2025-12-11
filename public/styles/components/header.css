@@ -51,11 +51,15 @@
 .header-link::after {
   content: '';
   position: absolute;
-  bottom: 0;
+  bottom: -4px;
   left: 50%;
   width: 0;
-  height: 2px;
-  background-color: var(--color-white);
+  height: 6px;
+  /* Dot pattern using radial gradient */
+  background-image: radial-gradient(circle, var(--color-white) 2px, transparent 2px);
+  background-size: 10px 6px;
+  background-repeat: repeat-x;
+  background-position: center;
   transition: width var(--transition-standard), left var(--transition-standard);
 }
 
@@ -72,22 +76,22 @@
   transform: translateY(0) scale(0.98);
 }
 
-/* Wiggle Animation Keyframes */
+/* Wiggle Animation Keyframes - Uses 'translate' property to avoid conflicts with transform */
 @keyframes name-wiggle {
   0%, 9%, 100% {
-    transform: translateX(0);
+    translate: 0 0;
   }
   1% {
-    transform: translateX(-2px);
+    translate: -2px 0;
   }
   3% {
-    transform: translateX(2px);
+    translate: 2px 0;
   }
   5% {
-    transform: translateX(-2px);
+    translate: -2px 0;
   }
   7% {
-    transform: translateX(2px);
+    translate: 2px 0;
   }
 }
 
@@ -104,44 +108,44 @@
   transform: scale(1.02);
 }
 
-/* RGB Trichromatic Chromatic Aberration Effect with Animation */
-.header-name.trichromatic {
+/* RGB Trichromatic Chromatic Aberration Effect - Reusable */
+.trichromatic {
   color: #ff0000;
   mix-blend-mode: screen;
-  animation: name-wiggle 5.5s ease-in-out infinite;
+  position: relative;
 }
 
-.header-name.trichromatic::before,
-.header-name.trichromatic::after {
-  content: 'ZUBAIR AHMED';
+.trichromatic::before,
+.trichromatic::after {
+  content: attr(data-text);
   position: absolute;
   left: 0;
   top: 0;
   mix-blend-mode: screen;
-  transition: left 0.4s ease-in-out, top 0.4s ease-in-out;
+  transition: left 0.3s ease-in-out, top 0.3s ease-in-out;
+  pointer-events: none;
 }
 
-.header-name.trichromatic::before {
+.trichromatic::after {
   color: #00ff00;
-  animation: name-wiggle 5.5s ease-in-out infinite;
-  animation-delay: 0.05s;
 }
 
-.header-name.trichromatic::after {
+.trichromatic::before {
   color: #0000ff;
-  animation: name-wiggle 5.5s ease-in-out infinite;
-  animation-delay: 0.1s;
 }
 
-/* Hover effect - offset RGB layers for chromatic aberration */
-.header-name.trichromatic:hover::before {
-  left: -3px;
+.trichromatic:hover::before {
+  left: -1px;
   top: -1px;
 }
 
-.header-name.trichromatic:hover::after {
-  left: 3px;
+.trichromatic:hover::after {
+  left: 1px;
   top: 1px;
+}
+
+.wiggle {
+  animation: name-wiggle 5.5s ease-in-out infinite;
 }
 
 /* ==================== */

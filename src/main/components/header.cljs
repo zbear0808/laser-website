@@ -39,14 +39,15 @@
 
               (d/div {:class "header-title"}
                      (d/h1 {:class "header-name trichromatic"
-                            :on-click #(do (navigate "/") (close-sidebar))}
+                            :data-text "ZUBAIR AHMED"
+                            :on-click #(navigate-and-close "/")}
                            "ZUBAIR AHMED"))
 
               (d/nav {:class "header-nav header-nav-right desktop-only"}
                      (d/button {:class "btn header-link"
                                 :on-click #(navigate "/about")}
                                "About Me")
-                     (d/button {:class "btn header-link"
+                     (d/button {:class "btn header-link wiggle"
                                 :on-click #(navigate "/contact")}
                                "Booking"))
 

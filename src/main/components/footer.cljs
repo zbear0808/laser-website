@@ -64,7 +64,7 @@
                                (d/polygon {:points "9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"})))
 
                    ;; Email
-                   (d/a {:href "mailto:zugoood.lasers@gmail.com"
+                   (d/a {:href "mailto:zugood.lasers@gmail.com"
                          :class "social-link social-link-email"
                          :aria-label "Email"}
                         (d/svg {:xmlns "http://www.w3.org/2000/svg"
