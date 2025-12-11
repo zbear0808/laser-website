@@ -11,7 +11,7 @@
                    (d/a {:href "https://instagram.com/zugood"
                          :target "_blank"
                          :rel "noopener noreferrer"
-                         :class "social-link social-link-instagram"
+                         :class "btn social-link social-link-instagram"
                          :aria-label "Instagram"}
                         (d/svg {:xmlns "http://www.w3.org/2000/svg"
                                 :width "24"
@@ -30,7 +30,7 @@
                    (d/a {:href "https://linkedin.com/in/zubaira2"
                          :target "_blank"
                          :rel "noopener noreferrer"
-                         :class "social-link social-link-linkedin"
+                         :class "btn social-link social-link-linkedin"
                          :aria-label "LinkedIn"}
                         (d/svg {:xmlns "http://www.w3.org/2000/svg"
                                 :width "24"
@@ -49,7 +49,7 @@
                    (d/a {:href "#"  ; Placeholder - fill in your YouTube URL
                          :target "_blank"
                          :rel "noopener noreferrer"
-                         :class "social-link social-link-youtube"
+                         :class "btn social-link social-link-youtube"
                          :aria-label "YouTube"}
                         (d/svg {:xmlns "http://www.w3.org/2000/svg"
                                 :width "24"
@@ -65,7 +65,7 @@
 
                    ;; Email
                    (d/a {:href "mailto:zugood.lasers@gmail.com"
-                         :class "social-link social-link-email"
+                         :class "btn social-link social-link-email"
                          :aria-label "Email"}
                         (d/svg {:xmlns "http://www.w3.org/2000/svg"
                                 :width "24"

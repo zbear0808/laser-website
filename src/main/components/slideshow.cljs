@@ -1,6 +1,6 @@
 (ns main.components.slideshow
   (:require
-    [helix.core :refer [defnc $]]
+    [helix.core :refer [defnc]]
     [helix.dom :as d]
     [helix.hooks :as hooks]))
 
@@ -17,10 +17,10 @@
                     interval-ms)]
         (fn [] (js/clearTimeout timer))))
 
-    (d/div {:class "slideshow-container"}
+    (d/div {:class "relative overflow-hidden slideshow-container"}
            (for [[idx image] (map-indexed vector images)]
              (d/img {:key idx
                      :src image
                      :alt (str "Slide " (inc idx))
-                     :class (str "slideshow-image "
+                     :class (str "overlay-full img-cover slideshow-image "
                                  (when (= idx current-index) "active"))})))))

@@ -21,7 +21,6 @@
     letter-spacing: 1px;
   }
 
-
   /* Page adjustments */
   .page {
     padding: 30px 15px;
@@ -35,13 +34,13 @@
     font-size: 1rem;
   }
 
-  /* Videos grid mobile */
+  /* Videos grid mobile - override to single column */
   .videos-grid {
     grid-template-columns: 1fr;
     gap: 16px;
   }
 
-  /* Pictures grid mobile */
+  /* Pictures grid mobile - smaller min-width */
   .pictures-grid {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 15px;
@@ -58,7 +57,7 @@
     text-align: center;
   }
 
-  /* Home page mobile */
+  /* Home grid mobile - single column */
   .home-grid {
     grid-template-columns: 1fr;
     gap: 20px;
@@ -117,6 +116,7 @@
     font-size: 1.6rem;
   }
 
+  /* Pictures grid - single column on very small screens */
   .pictures-grid {
     grid-template-columns: 1fr;
   }

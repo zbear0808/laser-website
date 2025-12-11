@@ -19,7 +19,7 @@
 
     (hooks/use-effect
       [pathname]
-      (let [page-title (get route-titles pathname)
+      (let [page-title (route-titles pathname)
             full-title (if page-title
                          (str "ZuGood Lasers | " page-title)
                          "ZuGood Lasers")]

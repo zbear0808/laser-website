@@ -15,18 +15,18 @@
 
 
 (defnc video-embed [{:keys [video-id]}]
-  (d/div {:class "card video-container"}
+  (d/div {:class "card relative aspect-16-9 video-container"}
          (d/iframe {:src (str "https://www.youtube.com/embed/" video-id)
                     :title "YouTube video player"
                     :frameBorder "0"
                     :allow "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     :allowFullScreen true
-                    :class "video-iframe"})))
+                    :class "overlay-full video-iframe"})))
 
 
 (defnc videos-page []
   (d/div {:class "page"}
          (d/h1 "Videos")
-         (d/div {:class "grid videos-grid"}
+         (d/div {:class "grid grid-auto-fit-lg gap-lg videos-grid"}
                 (for [video-id video-ids]
                   ($ video-embed {:key video-id :video-id video-id})))))

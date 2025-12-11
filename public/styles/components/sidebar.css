@@ -1,10 +1,8 @@
 /* ==================== */
 /* Hamburger Button     */
 /* ==================== */
+/* Uses .btn in CLJS for base button styles */
 .hamburger-btn {
-  background: transparent;
-  border: none;
-  cursor: pointer;
   padding: 10px;
   z-index: 1001;
 }
@@ -36,11 +34,6 @@
 .hamburger-icon.open .hamburger-dot:nth-child(6),
 .hamburger-icon.open .hamburger-dot:nth-child(8) {
   opacity: 0;
-}
-
-/* Header Spacer for mobile layout balance */
-.header-spacer {
-  width: 44px;
 }
 
 /* ==================== */
@@ -93,7 +86,7 @@
   margin-top: 40px;
 }
 
-/* Sidebar Link - extends .btn */
+/* Sidebar Link - uses .btn in CLJS */
 .sidebar-link {
   border-bottom: 1px solid var(--color-border);
   padding: 15px 10px;

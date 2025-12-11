@@ -14,11 +14,11 @@
   gap: 20px;
 }
 
+/* Social Link - uses .btn in CLJS for base styles */
 .social-link {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--color-white);
   padding: 8px;
   border-radius: 50%;
   transition: color var(--transition-standard), 

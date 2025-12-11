@@ -1,23 +1,19 @@
 /* ==================== */
 /* Videos Page          */
 /* ==================== */
+
+/* Videos Grid - uses .grid .grid-auto-fit-lg .gap-lg in CLJS */
 .videos-grid {
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 24px;
+  /* Additional grid styling if needed */
 }
 
+/* Video Container - uses .card .relative .aspect-16-9 in CLJS */
 .video-container {
-  position: relative;
   width: 100%;
-  padding-bottom: 56.25%; /* 16:9 aspect ratio */
 }
 
+/* Video Iframe - uses .overlay-full in CLJS */
 .video-iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
   border: none;
   border-radius: var(--border-radius-sm);
 }

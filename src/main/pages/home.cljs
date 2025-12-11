@@ -20,18 +20,18 @@
 (defnc home-page []
   (let [navigate (useNavigate)]
     (d/div {:class "page home-page"}
-           (d/div {:class "grid home-grid"}
+           (d/div {:class "grid grid-2-col gap-xl home-grid"}
                   (d/div {:class "card home-card"
                           :on-click #(navigate "/videos")}
-                         (d/div {:class "home-card-image"}
+                         (d/div {:class "home-card-image relative overflow-hidden aspect-16-10"}
                                 (d/img {:src "./images/laserVid.gif"
                                         :alt "Videos"
-                                        :class "home-card-img"})
-                                (d/div {:class "home-card-overlay-title"} "Videos")))
+                                        :class "img-cover home-card-img"})
+                                (d/div {:class "overlay-full overlay-center home-card-overlay-title"} "Videos")))
 
                   (d/div {:class "card home-card"
                           :on-click #(navigate "/pictures")}
-                         (d/div {:class "home-card-image"}
+                         (d/div {:class "home-card-image relative overflow-hidden aspect-16-10"}
                                 ($ image-slideshow {:images slideshow-images
                                                     :interval-ms 2500})
-                                (d/div {:class "home-card-overlay-title"} "Pictures")))))))
+                                (d/div {:class "overlay-full overlay-center home-card-overlay-title"} "Pictures")))))))

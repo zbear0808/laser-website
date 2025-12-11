@@ -5,24 +5,17 @@
   max-width: 1200px;
 }
 
+/* Pictures Grid - uses .grid .grid-auto-fit-md in CLJS */
 .pictures-grid {
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  /* Additional grid styling if needed */
 }
 
+/* Picture Container - uses .card .relative .aspect-4-3 in CLJS */
 .picture-container {
-  position: relative;
-  aspect-ratio: 4 / 3;
+  /* Container styles come from utilities */
 }
 
+/* Picture Image - uses .img-cover .img-block .hover-scale-opacity in CLJS */
 .picture-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  transition: transform var(--transition-standard), opacity var(--transition-standard);
-}
-
-.picture-container:hover .picture-img {
-  transform: scale(1.05);
-  opacity: 0.9;
+  /* Image styles come from utilities */
 }

@@ -40,7 +40,7 @@
   font-family: var(--font-ndot);
 }
 
-/* Header Link - extends .btn */
+/* Header Link - uses .btn in CLJS */
 .header-link {
   padding: 0px 16px;
   font-size: 1.5rem;
@@ -151,13 +151,7 @@
   animation: name-wiggle 5.5s ease-in-out infinite;
 }
 
-/* ==================== */
-/* Mobile/Desktop Visibility */
-/* ==================== */
-.mobile-only {
-  display: none;
-}
-
-.desktop-only {
-  display: flex;
+/* Header Spacer for mobile layout balance */
+.header-spacer {
+  width: 44px;
 }

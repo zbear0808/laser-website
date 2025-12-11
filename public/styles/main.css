@@ -7,6 +7,7 @@
 @import './base/variables.css';
 @import './base/fonts.css';
 @import './base/reset.css';
+@import './base/utilities.css';
 
 /* Components - Order by dependency */
 @import './components/buttons.css';

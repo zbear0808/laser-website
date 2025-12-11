@@ -9,7 +9,7 @@
   overflow: hidden;
 }
 
-/* Home Card */
+/* Home Card - uses .card .hover-lift-lg */
 .home-card {
   cursor: pointer;
   transition: transform var(--transition-standard), box-shadow var(--transition-standard);
@@ -20,17 +20,13 @@
   box-shadow: 0 10px 30px rgba(255, 255, 255, 0.1);
 }
 
+/* Home Card Image Container - uses .relative .overflow-hidden .aspect-16-10 in CLJS */
 .home-card-image {
   width: 100%;
-  aspect-ratio: 16 / 10;
-  overflow: hidden;
-  position: relative;
 }
 
+/* Home Card Image - uses .img-cover in CLJS */
 .home-card-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
   transition: transform var(--transition-standard);
 }
 
@@ -38,16 +34,8 @@
   transform: scale(1.05);
 }
 
-/* Overlay Title for Home Cards */
+/* Overlay Title - uses .overlay-full .overlay-center in CLJS */
 .home-card-overlay-title {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   margin: 0;
   font-size: 5vw;
   font-weight: 70;

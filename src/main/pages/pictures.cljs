@@ -26,16 +26,16 @@
 
 
 (defnc picture-item [{:keys [filename]}]
-  (d/div {:class "card picture-container"}
+  (d/div {:class "card relative aspect-4-3 overflow-hidden picture-container"}
          (d/img {:src (str "./images/" filename)
                  :alt filename
-                 :class "picture-img"
+                 :class "img-cover img-block hover-scale-opacity picture-img"
                  :loading "lazy"})))
 
 
 (defnc pictures-page []
   (d/div {:class "page pictures-page"}
          (d/h1 "Pictures")
-         (d/div {:class "grid pictures-grid"}
+         (d/div {:class "grid grid-auto-fit-md pictures-grid"}
                 (for [filename image-files]
                   ($ picture-item {:key filename :filename filename})))))

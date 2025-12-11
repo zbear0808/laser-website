@@ -23,7 +23,7 @@
                                 :on-click #(navigate "/videos")}
                                "Videos"))
 
-              (d/button {:class "hamburger-btn mobile-only"
+              (d/button {:class "btn hamburger-btn mobile-only"
                          :on-click toggle-sidebar
                          :aria-label "Toggle navigation menu"}
                         (d/span {:class (str "hamburger-icon " (when sidebar-open? "open"))}

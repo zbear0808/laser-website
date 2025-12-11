@@ -5,7 +5,7 @@
   max-width: 1000px;
 }
 
+/* Home Grid - uses .grid .grid-2-col .gap-xl in CLJS */
 .home-grid {
-  grid-template-columns: repeat(2, 1fr);
-  gap: 30px;
+  /* Additional home grid styling if needed */
 }
