@@ -1,4 +1,5 @@
-FROM eclipse-temurin:21-jdk-alpine
+# Stage 1: Build
+FROM eclipse-temurin:21-jdk-alpine AS builder
 
 # Install Node.js, npm, and dependencies for Clojure
 RUN apk add --no-cache nodejs npm bash curl rlwrap
@@ -24,8 +25,24 @@ COPY . .
 # Build the application
 RUN npm run build
 
-# Expose port (if needed for preview, though this is a static site)
-EXPOSE 8080
+# Stage 2: Serve with nginx
+FROM nginx:alpine
 
-# For static hosting, we just need the public directory
-# The hosting platform will serve from /app/public
+# Copy built files from builder stage
+COPY --from=builder /app/public /usr/share/nginx/html
+
+# Copy nginx config for SPA routing (redirect all requests to index.html)
+RUN echo 'server { \
+    listen 80; \
+    listen [::]:80; \
+    server_name _; \
+    root /usr/share/nginx/html; \
+    index index.html; \
+    location / { \
+        try_files $uri $uri/ /index.html; \
+    } \
+}' > /etc/nginx/conf.d/default.conf
+
+EXPOSE 80
+
+CMD ["nginx", "-g", "daemon off;"]
