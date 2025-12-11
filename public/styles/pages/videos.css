@@ -1,18 +1,7 @@
-/* ==================== */
-/* Videos Page          */
-/* ==================== */
-
-/* Videos Grid - uses .grid .grid-auto-fit-lg .gap-lg in CLJS */
-.videos-grid {
-  /* Additional grid styling if needed */
-}
-
-/* Video Container - uses .card .relative .aspect-16-9 in CLJS */
 .video-container {
   width: 100%;
 }
 
-/* Video Iframe - uses .overlay-full in CLJS */
 .video-iframe {
   border: none;
   border-radius: var(--border-radius-sm);

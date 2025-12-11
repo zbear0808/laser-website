@@ -1,15 +1,11 @@
-/* ==================== */
-/* Card Components      */
-/* ==================== */
-
-/* Base Card - shared by containers with dark backgrounds */
+/* Base Card */
 .card {
   background-color: var(--color-bg-card);
   border-radius: var(--border-radius-sm);
   overflow: hidden;
 }
 
-/* Home Card - uses .card .hover-lift-lg */
+/* Home Card */
 .home-card {
   cursor: pointer;
   transition: transform var(--transition-standard), box-shadow var(--transition-standard);
@@ -20,12 +16,10 @@
   box-shadow: 0 10px 30px rgba(255, 255, 255, 0.1);
 }
 
-/* Home Card Image Container - uses .relative .overflow-hidden .aspect-16-10 in CLJS */
 .home-card-image {
   width: 100%;
 }
 
-/* Home Card Image - uses .img-cover in CLJS */
 .home-card-img {
   transition: transform var(--transition-standard);
 }
@@ -34,7 +28,7 @@
   transform: scale(1.05);
 }
 
-/* Overlay Title - uses .overlay-full .overlay-center in CLJS */
+/* Overlay Title */
 .home-card-overlay-title {
   margin: 0;
   font-size: 5vw;

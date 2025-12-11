@@ -4,8 +4,3 @@
 .home-page {
   max-width: 1000px;
 }
-
-/* Home Grid - uses .grid .grid-2-col .gap-xl in CLJS */
-.home-grid {
-  /* Additional home grid styling if needed */
-}

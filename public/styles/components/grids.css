@@ -1,8 +1,3 @@
-/* ==================== */
-/* Grid Components      */
-/* ==================== */
-
-/* Base Grid - shared grid patterns */
 .grid {
   display: grid;
   gap: 20px;

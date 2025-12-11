@@ -1,6 +1,3 @@
-/* ==================== */
-/* Header Styles        */
-/* ==================== */
 .header {
   display: flex;
   justify-content: space-between;
@@ -40,7 +37,6 @@
   font-family: var(--font-ndot);
 }
 
-/* Header Link - uses .btn in CLJS */
 .header-link {
   padding: 0px 16px;
   font-size: 1.5rem;
@@ -79,7 +75,6 @@
   transform: translateY(0) scale(0.98);
 }
 
-/* Wiggle Animation Keyframes - Uses 'translate' property to avoid conflicts with transform */
 @keyframes name-wiggle {
   0%, 9%, 100% {
     translate: 0 0;
@@ -111,7 +106,6 @@
   transform: scale(1.02);
 }
 
-/* RGB Trichromatic Chromatic Aberration Effect - Reusable */
 .trichromatic {
   color: #ff0000;
   mix-blend-mode: screen;

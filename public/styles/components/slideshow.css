@@ -1,14 +1,8 @@
-/* ==================== */
-/* Slideshow            */
-/* ==================== */
-
-/* Container - uses .relative .overflow-hidden in CLJS */
 .slideshow-container {
   width: 100%;
   height: 100%;
 }
 
-/* Image - uses .overlay-full .img-cover in CLJS */
 .slideshow-image {
   opacity: 0;
   transition: opacity var(--transition-slow);

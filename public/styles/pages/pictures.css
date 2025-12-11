@@ -1,21 +1,3 @@
-/* ==================== */
-/* Pictures Page        */
-/* ==================== */
 .pictures-page {
   max-width: 1200px;
-}
-
-/* Pictures Grid - uses .grid .grid-auto-fit-md in CLJS */
-.pictures-grid {
-  /* Additional grid styling if needed */
-}
-
-/* Picture Container - uses .card .relative .aspect-4-3 in CLJS */
-.picture-container {
-  /* Container styles come from utilities */
-}
-
-/* Picture Image - uses .img-cover .img-block .hover-scale-opacity in CLJS */
-.picture-img {
-  /* Image styles come from utilities */
 }
