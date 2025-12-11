@@ -60,6 +60,9 @@
   background-size: 10px 6px;
   background-repeat: repeat-x;
   background-position: center;
+  /* Soft gradient at edges - subtle fade at boundaries */
+  mask-image: linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%);
   transition: width var(--transition-standard), left var(--transition-standard);
 }
 

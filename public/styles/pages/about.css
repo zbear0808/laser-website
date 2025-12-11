@@ -8,9 +8,3 @@
 .services-list {
   list-style-type: disc;
 }
-
-.nav-buttons {
-  display: flex;
-  gap: 15px;
-  flex-wrap: wrap;
-}

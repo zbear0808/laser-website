@@ -38,15 +38,6 @@
   transform: scale(1.05);
 }
 
-.home-card-title {
-  text-align: center;
-  padding: 10px;
-  margin: 0;
-  font-size: 1.5rem;
-  font-weight: 70;
-  font-family: var(--font-ndot);
-}
-
 /* Overlay Title for Home Cards */
 .home-card-overlay-title {
   position: absolute;

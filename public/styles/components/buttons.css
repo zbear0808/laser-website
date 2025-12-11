@@ -47,10 +47,3 @@
   transform: none;
   background-color: var(--color-white);
 }
-
-/* Nav Button - extends .btn-solid */
-.nav-button {
-  padding: 12px 24px;
-  font-size: 1rem;
-  font-weight: 600;
-}
