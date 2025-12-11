@@ -6,7 +6,8 @@
     "start": "shadow-cljs watch app tests",
     "build": "shadow-cljs release app",
     "test": "shadow-cljs compile node-tests && node out/node-tests.js",
-    "test:watch": "shadow-cljs watch node-tests --config-merge \"{:autorun true}\""
+    "test:watch": "shadow-cljs watch node-tests --config-merge \"{:autorun true}\"",
+    "format": "clojure -M:dev -m cljstyle.main fix"
   },
   "dependencies": {
     "react": "^19.2.1",
